@@ -1,0 +1,5 @@
+{
+  "sensor_id": ${random():mod(100):plus(1)},
+  "car_count": ${random():mod(50)},
+  "timestamp": "${now():format("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")}"
+}
