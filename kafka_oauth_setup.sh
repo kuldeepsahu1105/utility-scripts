@@ -38,7 +38,7 @@ if [ $# -eq 1 ]; then
   echo "OAUTH2 CA Certificate Base64 encoded ENCODED:"
   openssl s_client -showcerts -connect "$CONSOLE_HOST" </dev/null 2>/dev/null \
     | openssl x509 -outform PEM > "${SCRIPT_DIR}/console.pem"
-  base64 < "${SCRIPT_DIR}/console.pem"
+  base64 < "${SCRIPT_DIR}/console.pem" | tr -d '\n'
   echo ""
   exit 0
 fi
